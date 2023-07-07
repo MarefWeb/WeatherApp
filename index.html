@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!--
+    - primary meta tags
+  -->
+  <title>cloudy</title>
+  <meta name="title" content="rainy"/>
+  <meta name="description" content="rainy is a weather app"/>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.ico">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!--
+    - custom css
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - custom js
+  -->
+  <script src="./assets/js/route.js" type="module"></script>
+  <script src="./assets/js/app.js" type="module"></script>
+</head>
+<body>
+  <!--
+    - #HEADER
+  -->
+
+  <header class="header">
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.png" width="150"
+             height="150" alt="logo">
+        <p class="title-1">Cloudy</p>
+      </a>
+
+      <div class="search-view" data-search-view>
+
+        <div class="search-wrapper">
+
+          <input type="search" name="search" placeholder="Search city..."
+                 autocomplete="off" class="search-field" data-search-field>
+
+          <span class="m-icon leading-icon">search</span>
+
+          <button class="icon-btn leading-icon has-state"
+                  aria-label="close search" data-search-toggler>
+            <span class="m-icon">arrow_back</span>
+          </button>
+
+        </div>
+
+        <div class="search-result" data-search-result>
+          <ul class="view-list" data-search-list>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="header-actions">
+
+        <button class="icon-btn has-state" aria-label="open search"
+                data-search-toggler>
+          <span class="m-icon icon">search</span>
+        </button>
+
+        <a href="#/current-location" class="btn-primary has-state"
+           data-current-location-btn>
+          <span class="m-icon">my_location</span>
+          <span class="span">Current Location</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <article class="container">
+
+      <div class="content-left">
+        <!--
+          #CURRENT WEATHER
+        -->
+
+        <section class="section current-weather"
+                 aria-label="current weather" data-current-weather>
+        </section>
+
+
+        <!--
+          #FORECAST
+        -->
+
+        <section class="section forecast" aria-label="forecast-label">
+          <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
+          
+          <div class="card card-lg forecast-card" data-5-day-forecast>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="content-right">
+        <!--
+          - #HIGHLIGHTS
+        -->
+
+        <section class="section highlights" aria-labelledby="highlights-label"
+        data-highlights>
+
+          <div class="card card-lg">
+
+            <h2 class="title-2" id="highlights-label">Todays Highlights</h2>
+
+            <div class="highlight-list">
+
+              <div class="card card-sm highlight-card one" data-air-pollution>
+              </div>
+
+              <div class="card card-sm highlight-card two" data-sunrise-sunset>
+              </div>
+
+              <div class="card card-sm highlight-card">
+
+                <h3 class="title-3">Humidity</h3>
+
+                <div class="wrapper">
+                  <span class="m-icon">humidity_percentage</span>
+
+                  <p class="title-1" data-humidity></p>
+                </div>
+
+              </div>
+
+              <div class="card card-sm highlight-card">
+
+                <h3 class="title-3">Pressure</h3>
+
+                <div class="wrapper">
+                  <span class="m-icon">airwave</span>
+
+                  <p class="title-1" data-pressure></p>
+                </div>
+
+              </div>
+
+              <div class="card card-sm highlight-card">
+
+                <h3 class="title-3">Visibility</h3>
+
+                <div class="wrapper">
+                  <span class="m-icon">visibility</span>
+
+                  <p class="title-1" data-visibility></p>
+                </div>
+
+              </div>
+
+              <div class="card card-sm highlight-card">
+
+                <h3 class="title-3">Feels Like</h3>
+
+                <div class="wrapper">
+                  <span class="m-icon">thermostat</span>
+
+                  <p class="title-1" data-feels-like></p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!--
+          - #HOURLY FORECAST
+        -->
+
+        <section class="section hourly-forecast" aria-label="hourly forecast" data-hourly-forecast>
+          <h2 class="title-2">Today at</h2>
+
+          <div class="slider-container">
+            <ul class="slider-list" data-temp></ul>
+            <ul class="slider-list" data-wind></ul>
+          </div>
+        </section>
+
+        <!--
+          - #FOOTER
+        -->
+
+        <footer class="footer">
+          <p class="body-3">
+            Copyright 2023 maref. All Rights Reserved.
+          </p>
+
+          <p class="body-3">
+            Powered By <a href="https://openweathermap.org/"
+                          title="Free OpenWeather Api" target="_blank"
+                          rel="noopener">
+            <img src="./assets/images/openweather.png" width="150" height="30"
+                 loading="lazy" alt="OpenWeather">
+          </a>
+          </p>
+        </footer>
+      </div>
+
+      <div class="loading" data-loading></div>
+
+    </article>
+  </main>
+
+
+  <!--
+    - #404 SECTION
+  -->
+
+  <section class="error-content" data-error-content>
+
+    <h2 class="heading">404</h2>
+
+    <p class="body-1">Page not found!</p>
+
+    <a href="#/weather?lat=50.9216&lon=34.80029" class="btn-primary">
+      <span class="span">Go Home</span>
+    </a>
+
+  </section>
+
+</body>
+</html>
